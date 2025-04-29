@@ -19,6 +19,15 @@ export default antfu(
       'node/prefer-global/process': 'off',
       'eqeqeq': 'off', // 允许使用 == 比较
       'ts/no-empty-object-type': 'off',
+      // 强制模板中的标签名为短横线格式
+      "vue/component-name-in-template-casing": [
+        "error",
+        "kebab-case",
+        {
+          registeredComponentsOnly: false, // 检查所有组件（包括全局注册的）
+          ignores: [], // 无需忽略的文件
+        },
+      ],
     },
 
     // 忽略文件

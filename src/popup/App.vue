@@ -22,7 +22,7 @@ window.addEventListener('beforeunload', () => {
 
 <template>
   <div class="popup-container">
-    <WordAnd />
+    <word-and />
     {{ price }}{{ ss }}
     {{ ss + 1 }}
   </div>
