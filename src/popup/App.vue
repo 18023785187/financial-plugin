@@ -1,15 +1,16 @@
 <template>
   <div class="popup-container">
-    <Aa />
-    {{ price }}
+    <word-and />
+    {{ price }}{{ a }}{{ ss }}
+    {{ ss + '1' }}
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import Aa from '@/components/word-and.vue'
-
-// const text: number = 1
+import WordAnd from '@/components/word-and.vue'
+let ww = 1
+let ss = `Hello, ${ ww }!`
 
 const price = ref('132')
 console.log(window, document, defineEmits)
