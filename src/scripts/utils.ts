@@ -1,6 +1,6 @@
 interface ArgumentsConfig {
-  [k: string]: string | number | boolean;
-  port: number;
+  [k: string]: string | number | boolean
+  port: number
 }
 
 // 判断是否为十进制整数数字
@@ -17,10 +17,9 @@ const isDecimalInt = (numberString: string) => /^(?!0)\d+$/.test(numberString)
  *      port: 8088
  *  }
  *
- * @param defaultConf
- * @returns
+ * @param defaultConfig
  */
-export const parseArgs = (defaultConfig: ArgumentsConfig) => {
+export function parseArgs(defaultConfig: ArgumentsConfig) {
   const config: ArgumentsConfig = { ...defaultConfig }
   const startIndex = process.argv.indexOf('--')
   if (startIndex === -1) {
@@ -33,10 +32,12 @@ export const parseArgs = (defaultConfig: ArgumentsConfig) => {
     if (argument.indexOf('--') === 0) {
       if (next == undefined || next.indexOf('--') === 0) {
         config[argument.slice(2)] = true
-      } else if (next === 'true' || next === 'false' || isDecimalInt(next)) {
+      }
+      else if (next === 'true' || next === 'false' || isDecimalInt(next)) {
         config[argument.slice(2)] = JSON.parse(next)
         index += 1
-      } else {
+      }
+      else {
         config[argument.slice(2)] = next
         index += 1
       }
@@ -47,9 +48,8 @@ export const parseArgs = (defaultConfig: ArgumentsConfig) => {
 
 /**
  * 获取配置信息
- * @returns
  */
-export const getInfo = () => {
+export function getInfo() {
   const environment = import.meta.env
 
   return { env: environment }

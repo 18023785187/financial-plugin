@@ -9,11 +9,13 @@ const datas = new Proxy(
       return Reflect.get(target, property, receiver)
     },
     set(target, property, value, receiver) {
-      for (const port of subscribers) port.postMessage(value)
+      for (const port of subscribers) {
+        port.postMessage(value)
+      }
       Reflect.set(target, property, value, receiver)
       return true
     },
-  }
+  },
 )
 
 chrome.runtime.onConnect.addListener((port) => {

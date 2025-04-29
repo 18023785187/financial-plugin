@@ -1,8 +1,8 @@
-import { defineConfig } from '@rsbuild/core';
-import { pluginVue } from '@rsbuild/plugin-vue';
+import { defineConfig } from '@rsbuild/core'
+import { pluginBabel } from '@rsbuild/plugin-babel'
+import { pluginSass } from '@rsbuild/plugin-sass'
+import { pluginVue } from '@rsbuild/plugin-vue'
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx'
-import { pluginBabel } from '@rsbuild/plugin-babel';
-import { pluginSass } from '@rsbuild/plugin-sass';
 import { parseArgs } from './src/scripts/utils'
 
 const argv = parseArgs({
@@ -18,8 +18,8 @@ export default defineConfig({
     assetPrefix: './',
     filenameHash: false,
     copy: [
-      { from: './public/' }
-    ]
+      { from: './public/' },
+    ],
   },
   source: {
     entry: {
@@ -36,10 +36,10 @@ export default defineConfig({
   },
   dev: {
     // dev 输出打包产物，但排除热更新的文件
-    writeToDisk: (file) => !file.includes('.hot-update.'),
+    writeToDisk: file => !file.includes('.hot-update.'),
   },
   server: {
     strictPort: true,
-    port: argv.port
-  }
-});
+    port: argv.port,
+  },
+})

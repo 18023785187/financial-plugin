@@ -1,19 +1,13 @@
-<template>
-  <div class="popup-container">
-    <word-and />
-    {{ price }}{{ a }}{{ ss }}
-    {{ ss + '1' }}
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { ref } from 'vue'
 import WordAnd from '@/components/word-and.vue'
-let ww = 1
-let ss = `Hello, ${ ww }!`
+
+import { createApp, ref } from 'vue'
+
+const ww = 1
+const ss = `Hello, ${ww}!${ww}`
 
 const price = ref('132')
-console.log(window, document, defineEmits)
+console.log(window, document, createApp)
 const port = chrome.runtime.connect({ name: 'popup-connect' })
 port.onMessage.addListener((data) => {
   price.value = data.price
@@ -26,9 +20,17 @@ window.addEventListener('beforeunload', () => {
 })
 </script>
 
-<style>
+<template>
+  <div class="popup-container">
+    <WordAnd />
+    {{ price }}{{ ss }}
+    {{ ss + 1 }}
+  </div>
+</template>
+
+<style lang="scss">
 .popup-container {
-  width: 300px;
+    width: 300px;
   padding: 20px;
   text-align: center;
 }

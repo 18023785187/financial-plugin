@@ -34,20 +34,24 @@ port.onMessage.addListener((data) => {
   rate.textContent = data.upAndDownRate
   if (yesterdayPrice > Number.parseFloat(data.price)) {
     price.style.color = 'green'
-  } else if (yesterdayPrice < Number.parseFloat(data.price)) {
+  }
+  else if (yesterdayPrice < Number.parseFloat(data.price)) {
     price.style.color = 'red'
-  } else {
+  }
+  else {
     price.style.color = 'blue'
   }
   if (prePrice > Number.parseFloat(data.price)) {
     container.style.animation = ''
     container.style.animation = 'green 1s'
     container.style.backgroundColor = 'rgba(0, 255, 0, 0.1)'
-  } else if (prePrice < Number.parseFloat(data.price)) {
+  }
+  else if (prePrice < Number.parseFloat(data.price)) {
     container.style.animation = ''
     container.style.animation = 'red 1s'
     container.style.backgroundColor = 'rgba(255, 0, 0, 0.1)'
-  } else {
+  }
+  else {
     container.style.animation = ''
   }
   prePrice = Number.parseFloat(data.price)
