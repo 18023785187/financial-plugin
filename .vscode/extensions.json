@@ -1,21 +1,13 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue"
-  ],
-  "eslint.format.enable": true,
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "recommendations": [
+    "vue.volar",
+    "hollowtree.vue-snippets",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented",
+    "mikestead.dotenv",
+    "bradlc.vscode-tailwindcss"
+  ]
 }
