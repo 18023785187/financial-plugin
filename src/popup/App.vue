@@ -7,9 +7,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import Aa from '@/components/wordAnd.vue'
+import Aa from '@/components/word-and.vue'
 
-const text: number = 1
+// const text: number = 1
 
 const price = ref('132')
 console.log(window, document, defineEmits)

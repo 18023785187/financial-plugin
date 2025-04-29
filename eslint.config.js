@@ -53,7 +53,7 @@ export default defineConfig([
     },
     rules: {
       'check-file/filename-naming-convention': ['error', {
-        '**/!(*.d.ts|APP.vue)': 'KEBAB_CASE'
+        '**/!(*.d.ts|App.vue)': 'KEBAB_CASE'
       }],
       'check-file/folder-naming-convention': ['error', {
         'src/**/': 'KEBAB_CASE'
