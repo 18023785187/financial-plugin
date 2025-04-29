@@ -32,6 +32,7 @@ window.addEventListener('beforeunload', () => {
 .popup-container {
     width: 300px;
   padding: 20px;
+        color: rgb(1 2 3 / 10%);
   text-align: center;
 }
 </style>
