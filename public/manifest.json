@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "报价器",
+  "version": "1.0.0",
+  "description": "报价器",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "static/js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["static/js/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

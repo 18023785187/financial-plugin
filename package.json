@@ -1,0 +1,57 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "commit": "git add -A && czg && git push",
+    "build": "rsbuild build",
+    "dev": "rsbuild dev",
+    "preview": "rsbuild preview",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "lint:eslint": "eslint ./src --ext .js,.ts,.vue --fix",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "element-plus": "^2.9.9",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.25.1",
+    "@rsbuild/core": "^1.3.1",
+    "@rsbuild/plugin-babel": "^1.0.5",
+    "@rsbuild/plugin-sass": "^1.3.1",
+    "@rsbuild/plugin-vue": "^1.0.7",
+    "@rsbuild/plugin-vue-jsx": "^1.1.0",
+    "@types/chrome": "^0.0.317",
+    "@types/node": "^22.15.3",
+    "autoprefixer": "^10.4.20",
+    "cz-git": "^1.11.0",
+    "czg": "^1.11.0",
+    "eslint": "^9.25.1",
+    "eslint-plugin-vue": "^10.0.1",
+    "globals": "^16.0.0",
+    "lint-staged": "^15.4.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.31.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}
